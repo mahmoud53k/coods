@@ -63,7 +63,6 @@
       text-align: center;
       color: #000;
     }
-  
     button {
       padding: 0.75rem;
       font-size: 1rem;
@@ -102,24 +101,18 @@
       to {
         transform: translate(-50%, -50%) scale(1);
         opacity: 0;
-  
-
- footer {
-  padding: 0.3rem 0;
-  text-align: center;
-  color: white;
-  font-size: 0.75rem;
-  background: rgba(0, 0, 0, 0.3);
-  width: 10%;
-}
-
-footer img {
-  content: url("https://i.ibb.co/27FtsLbt/Lavison-Training-Horizontal-White.png");
-  alt: "Logo Small";
-  width: 8px;
-  height: auto;
-  margin: 0 auto 0.2rem auto;
-}
+      }
+    }
+    footer {
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.3);
+      padding: 0.5rem 0;
+      text-align: center;
+    }
+    footer img {
+      width: 150px;
+      height: auto;
+    }
     @media (max-width: 480px) {
       .logo {
         width: 20px;
@@ -130,6 +123,9 @@ footer img {
       input[type="password"],
       button {
         font-size: 1rem;
+      }
+      footer img {
+        width: 100px;
       }
     }
   </style>
@@ -143,9 +139,9 @@ footer img {
       <button type="submit">Submit</button>
     </form>
   </div>
+
   <footer>
     <img src="https://i.ibb.co/27FtsLbt/Lavison-Training-Horizontal-White.png" alt="Logo Small">
-    &copy; 2025 lavison training center.
   </footer>
 
   <script>
@@ -153,12 +149,12 @@ footer img {
       e.preventDefault();
       const raw = document.getElementById('codeInput').value;
       const code = raw.trim().replace(/\s+/g, '');
- if (code === '789') {
-    window.location.href = 'https://docs.google.com/forms/d/e/1FAIpQLScj9tznNG1kWcCNLDmvWKozsNCxWm0_B1GPWZVCUNEc6iBXxw/viewform?usp=sharing&ouid=101081385908319157627';
-  } else if (code === '456') {
-    window.location.href = 'https://docs.google.com/forms/d/e/1FAIpQLSdIVRz_aCw0FN7qSmABHb6pI17zj5-rT1sNCubsQqlO7Dl4nw/viewform?usp=sharing&ouid=1010813859083';
-  } else {
-    alert('Invalid code.');
+      if (code === '789') {
+        window.location.href = 'https://docs.google.com/forms/d/e/1FAIpQLScj9tznNG1kWcCNLDmvWKozsNCxWm0_B1GPWZVCUNEc6iBXxw/viewform?usp=sharing&ouid=101081385908319157627';
+      } else if (code === '456') {
+        window.location.href = 'https://docs.google.com/forms/d/e/1FAIpQLSdIVRz_aCw0FN7qSmABHb6pI17zj5-rT1sNCubsQqlO7Dl4nw/viewform?usp=sharing&ouid=1010813859083';
+      } else {
+        alert('Invalid code.');
       }
     });
   </script>
