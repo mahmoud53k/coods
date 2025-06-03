@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Enter Code</title>
   <style>
     * {
@@ -22,22 +23,25 @@
       text-align: center;
     }
     .container {
+      flex: 1;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      flex: 1;
+      padding: 1rem;
+      width: 100%;
+      max-width: 600px;
     }
     .logo {
-      width: 400px;
+      max-width: 80%;
+      width: 250px;
       margin-bottom: 1.5rem;
     }
     .code-form {
-      background: white;
-      padding: 2rem;
+      background: rgba(255, 255, 255, 0.95);
+      padding: 1.5rem;
       border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-      max-width: 400px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
       width: 100%;
       display: flex;
       flex-direction: column;
@@ -45,25 +49,29 @@
     }
     .code-form h2 {
       margin-bottom: 1.5rem;
+      color: #333;
+      font-size: 1.5rem;
     }
-    input[type="text"] {
+    input[type="password"] {
       padding: 1rem;
       width: 100%;
-      font-size: 1.2rem;
-      margin-bottom: 1.5rem;
-      background-color: white;
+      font-size: 1.1rem;
+      margin-bottom: 1.2rem;
+      background-color: #ffffff;
       border: 1px solid #ccc;
       border-radius: 8px;
       text-align: center;
+      color: #000;
     }
     button {
-      padding: 0.75rem 1.5rem;
-      font-size: 1.1rem;
+      padding: 0.75rem;
+      font-size: 1rem;
       background: #007BFF;
       color: white;
       border: none;
       border-radius: 8px;
       cursor: pointer;
+      width: 100%;
     }
     button:hover {
       background: #0056b3;
@@ -72,12 +80,26 @@
       padding: 1rem;
       text-align: center;
       color: white;
-      font-size: 0.9rem;
+      font-size: 0.85rem;
+      background: rgba(0, 0, 0, 0.3);
+      width: 100%;
     }
     footer img {
-      width: 100px;
+      width: 80px;
       display: block;
       margin: 0 auto 0.5rem auto;
+    }
+    @media (max-width: 480px) {
+      .logo {
+        width: 200px;
+      }
+      .code-form {
+        padding: 1rem;
+      }
+      input[type="password"],
+      button {
+        font-size: 1rem;
+      }
     }
   </style>
 </head>
@@ -86,19 +108,20 @@
     <img src="https://i.ibb.co/27FtsLbt/Lavison-Training-Horizontal-White.png" alt="Logo" class="logo">
     <form class="code-form" id="codeForm" action="#">
       <h2>Enter Your Code</h2>
-      <input type="text" id="codeInput" name="code" placeholder="Enter code here" required>
+      <input type="password" id="codeInput" name="code" placeholder="Enter code here" required>
       <button type="submit">Submit</button>
     </form>
   </div>
   <footer>
     <img src="https://i.ibb.co/27FtsLbt/Lavison-Training-Horizontal-White.png" alt="Logo Small">
-    &copy; 2025 All rights reserved.
+    &copy; 2025 lavison training center.
   </footer>
 
   <script>
     document.getElementById('codeForm').addEventListener('submit', function(e) {
-      e.preventDefault(); // منع إعادة تحميل الصفحة
-      const code = document.getElementById('codeInput').value.trim();
+      e.preventDefault();
+      const raw = document.getElementById('codeInput').value;
+      const code = raw.trim().replace(/\s+/g, '');
 
       switch (code) {
         case '789':
