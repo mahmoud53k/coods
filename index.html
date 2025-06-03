@@ -151,16 +151,12 @@
       e.preventDefault();
       const raw = document.getElementById('codeInput').value;
       const code = raw.trim().replace(/\s+/g, '');
-
-      switch (code) {
-        case '789':
-          window.location.href = 'https://docs.google.com/forms/d/e/1FAIpQLScj9tznNG1kWcCNLDmvWKozsNCxWm0_B1GPWZVCUNEc6iBXxw/viewform?usp=sharing&ouid=101081385908319157627';
-          break;
-        case '456':
-          window.location.href = 'https://docs.google.com/forms/d/e/1FAIpQLSdIVRz_aCw0FN7qSmABHb6pI17zj5-rT1sNCubsQqlO7Dl4nw/viewform?usp=sharing&ouid=1010813859083';
-          break;
-        default:
-          alert('Invalid code.');
+ if (code === '789') {
+    window.location.href = 'https://docs.google.com/forms/d/e/1FAIpQLScj9tznNG1kWcCNLDmvWKozsNCxWm0_B1GPWZVCUNEc6iBXxw/viewform?usp=sharing&ouid=101081385908319157627';
+  } else if (code === '456') {
+    window.location.href = 'https://docs.google.com/forms/d/e/1FAIpQLSdIVRz_aCw0FN7qSmABHb6pI17zj5-rT1sNCubsQqlO7Dl4nw/viewform?usp=sharing&ouid=1010813859083';
+  } else {
+    alert('Invalid code.');
       }
     });
   </script>
