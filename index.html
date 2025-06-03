@@ -63,26 +63,46 @@
       text-align: center;
       color: #000;
     }
+  
     button {
       padding: 0.75rem;
       font-size: 1rem;
-      background:url('https://i.ibb.co/RT8w1dLR/Lavison-Gradient-Bckgrnd.jpg');
+      background: url('https://i.ibb.co/RT8w1dLR/Lavison-Gradient-Bckgrnd.jpg');
       color: white;
       border: none;
       border-radius: 8px;
       cursor: pointer;
       width: 100%;
       transition: transform 0.2s ease, box-shadow 0.2s ease;
-
+      position: relative;
+      overflow: hidden;
     }
-  button:hover {
-  background: url('https://i.ibb.co/RT8w1dLR/Lavison-Gradient-Bckgrnd.jpg');
-  transform: scale(1.05);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-}
+    button:hover {
+      background: url('https://i.ibb.co/RT8w1dLR/Lavison-Gradient-Bckgrnd.jpg');
+      transform: scale(1.05);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    }
     button:active {
-  transform: scale(0.95);
-}
+      transform: scale(0.95);
+    }
+    button:active::after {
+      content: '';
+      position: absolute;
+      background: rgba(255, 255, 255, 0.5);
+      border-radius: 50%;
+      left: 50%;
+      top: 50%;
+      width: 200%;
+      height: 200%;
+      transform: translate(-50%, -50%) scale(1);
+      animation: ripple 0.6s linear;
+      pointer-events: none;
+    }
+    @keyframes ripple {
+      to {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0;
+  
 
     }
     footer {
